@@ -139,30 +139,81 @@ Module Module1
 
         Sub deleteNode(ByVal dataItem As String)
 
-            'This won't work
-
             If startPTR = NullPointer Then
                 Console.WriteLine("There are no nodes in the list")
-
             Else
 
-                Dim thisNodePTR As Integer = searchList(dataItem)
+                Dim thisNodePTR As Integer = startPTR
+                Dim previousNodePTR As Integer = NullPointer
 
-                If thisNodePTR = NullPointer Then
-                    Console.WriteLine("The data to be deleted does not exist in list")
+                If dataItem = list(startPTR).data Then
+                    startPTR = list(thisNodePTR).ptr
+                    list(thisNodePTR).ptr = freeListPTR
+                    freeListPTR = thisNodePTR
+
                 Else
-                    If thisNodePTR = startPTR Then
-                        startPTR = list(thisNodePTR).ptr
-                        list(thisNodePTR).ptr = freeListPTR
-                        freeListPTR = thisNodePTR
+                    While list(thisNodePTR).ptr <> NullPointer
+                        If list(thisNodePTR).data <> dataItem Then
+                            previousNodePTR = thisNodePTR
+                            thisNodePTR = list(thisNodePTR).ptr
+                        Else
+                            thisNodePTR = list(thisNodePTR).ptr
+                        End If
+                    End While
 
-                    ElseIf list(thisNodePTR).ptr = NullPointer Then
-                        'Write code here,
+                    'Some this is wrong here
+                    Dim delNodePointer As Integer = list(thisNodePTR).ptr
+
+                    If delNodePointer = NullPointer Then
+
+                        Console.WriteLine("The data to be deleted does not exist in the list")
+                    Else
+
+
+
+                        If list(delNodePointer).ptr = NullPointer Then
+                            list(delNodePointer).ptr = freeListPTR
+                            freeListPTR = delNodePointer
+                            list(previousNodePTR).ptr = NullPointer
+                        Else
+
+                            list(previousNodePTR).ptr = list(delNodePointer).ptr
+                            list(delNodePointer).ptr = freeListPTR
+                            freeListPTR = delNodePointer
+
+                        End If
+
 
                     End If
+
                 End If
 
             End If
+
+            'This won't work
+
+            'If startPTR = NullPointer Then
+            '    Console.WriteLine("There are no nodes in the list")
+
+            'Else
+
+            '    Dim thisNodePTR As Integer = searchList(dataItem)
+
+            '    If thisNodePTR = NullPointer Then
+            '        Console.WriteLine("The data to be deleted does not exist in list")
+            '    Else
+            '        If thisNodePTR = startPTR Then
+            '            startPTR = list(thisNodePTR).ptr
+            '            list(thisNodePTR).ptr = freeListPTR
+            '            freeListPTR = thisNodePTR
+
+            '        ElseIf list(thisNodePTR).ptr = NullPointer Then
+            '            'Write code here,
+
+            '        End If
+            '    End If
+
+            'End If
 
 
         End Sub
@@ -226,14 +277,18 @@ Module Module1
         l.insertNewNode("A")
         l.insertNewNode("E")
 
+        'l.printList()
+
+        l.deleteNode("B")
+
 
         l.printList()
 
-        Console.WriteLine(l.searchList("A"))
-        Console.WriteLine(l.searchList("B"))
-        Console.WriteLine(l.searchList("C"))
-        Console.WriteLine(l.searchList("D"))
-        Console.WriteLine(l.searchList("E"))
+        'Console.WriteLine(l.searchList("A"))
+        'Console.WriteLine(l.searchList("B"))
+        'Console.WriteLine(l.searchList("C"))
+        'Console.WriteLine(l.searchList("D"))
+        'Console.WriteLine(l.searchList("E"))
         'l.printArrayList()
 
 
