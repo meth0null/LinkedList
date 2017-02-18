@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B878A11B-98C5-47A8-B211-43C47FE2ACD8}</ProjectGuid>
+    <ProjectGuid>{75BE0C81-4D6A-4B7A-BBB1-83C10C1BA00C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <StartupObject>LinkedList.Module1</StartupObject>
     <RootNamespace>LinkedList</RootNamespace>
@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Module1.vb" />
+    <Compile Include="Module2.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
