@@ -88,48 +88,48 @@
                 Exit Sub
             End If
 
-            Dim thisNodePTR As Integer = startPTR
-            Dim previousNodePTR As Integer = NullPTR
+            Dim TNP As Integer = startPTR
+            Dim PNP As Integer = NullPTR
 
-            'Deleting the first element
-            If dataItem = list(startPTR).DATA Then
-                startPTR = list(thisNodePTR).PTR
-                list(thisNodePTR).PTR = freeListPTR
-                freeListPTR = thisNodePTR
-                Exit Sub
-            End If
-
-            While thisNodePTR <> NullPTR
-
-                If list(thisNodePTR).DATA = dataItem Then
+            'Loop to find where in the list the item to be deleted is
+            While TNP <> NullPTR
+                If list(TNP).DATA = dataItem Then
                     Exit While
-
                 Else
-                    previousNodePTR = thisNodePTR
-                    thisNodePTR = list(thisNodePTR).PTR
-
+                    PNP = TNP
+                    TNP = list(TNP).PTR
                 End If
             End While
 
-            If list(previousNodePTR).PTR = NullPTR Then
-                Console.WriteLine("The node to be deleted does not exist")
+            'The node to be deleted was not found
+            If TNP = NullPTR Then
+                Console.WriteLine("The node to be delete is not in the list")
                 Exit Sub
             End If
 
-            Dim tempPTR As Integer = list(previousNodePTR).PTR
-
-            'Deleting the last element
-            If list(tempPTR).PTR = NullPTR Then
-                list(tempPTR).PTR = freeListPTR
-                freeListPTR = tempPTR
-                list(previousNodePTR).PTR = NullPTR
+            'The node to be deleted is at the start of the list
+            If TNP = startPTR And PNP = NullPTR Then
+                startPTR = list(TNP).PTR
+                list(TNP).PTR = freeListPTR
+                list(TNP).DATA = ""
+                freeListPTR = TNP
                 Exit Sub
             End If
 
-            'Deleting somewhere in the middle element
-            list(previousNodePTR).PTR = list(tempPTR).PTR
-            list(tempPTR).PTR = freeListPTR
-            freeListPTR = tempPTR
+            'The node to be deleted is at the end of the list
+            If list(TNP).PTR = NullPTR Then
+                list(PNP).PTR = NullPTR
+                list(TNP).PTR = freeListPTR
+                list(TNP).DATA = ""
+                freeListPTR = TNP
+                Exit Sub
+            End If
+
+            'The node to be deleted is soemwhere in the middle of the list
+            list(PNP).PTR = list(TNP).PTR
+            list(TNP).PTR = freeListPTR
+            list(TNP).DATA = ""
+            freeListPTR = TNP
 
         End Sub
 

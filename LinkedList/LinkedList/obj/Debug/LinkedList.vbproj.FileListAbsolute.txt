@@ -7,3 +7,12 @@ C:\Users\Quasem\Desktop\LinkedList\LinkedList\obj\Debug\LinkedList.vbproj.Genera
 C:\Users\Quasem\Desktop\LinkedList\LinkedList\obj\Debug\LinkedList.exe
 C:\Users\Quasem\Desktop\LinkedList\LinkedList\obj\Debug\LinkedList.xml
 C:\Users\Quasem\Desktop\LinkedList\LinkedList\obj\Debug\LinkedList.pdb
+C:\Users\Mastermind\Desktop\LinkedList\LinkedList\bin\Debug\LinkedList.exe.config
+C:\Users\Mastermind\Desktop\LinkedList\LinkedList\bin\Debug\LinkedList.exe
+C:\Users\Mastermind\Desktop\LinkedList\LinkedList\bin\Debug\LinkedList.pdb
+C:\Users\Mastermind\Desktop\LinkedList\LinkedList\bin\Debug\LinkedList.xml
+C:\Users\Mastermind\Desktop\LinkedList\LinkedList\obj\Debug\LinkedList.Resources.resources
+C:\Users\Mastermind\Desktop\LinkedList\LinkedList\obj\Debug\LinkedList.vbproj.GenerateResource.Cache
+C:\Users\Mastermind\Desktop\LinkedList\LinkedList\obj\Debug\LinkedList.exe
+C:\Users\Mastermind\Desktop\LinkedList\LinkedList\obj\Debug\LinkedList.xml
+C:\Users\Mastermind\Desktop\LinkedList\LinkedList\obj\Debug\LinkedList.pdb

@@ -12,6 +12,8 @@
         l.insertNewData("b")
         l.insertNewData("a")
 
+        l.traceList()
+
         l.printList()
 
         l.deleteNode("b")
@@ -24,6 +26,10 @@
         l.printList()
 
         l.deleteNode("a")
+
+        l.deleteNode("e")
+
+        l.printList()
 
         l.traceList()
 
