@@ -4,19 +4,25 @@
 
         Dim l As LinkedList
 
-        l.initialize(5)
+        l.initialize(20)
 
+        l.insertNewData("i")
+        l.insertNewData("h")
+        l.insertNewData("g")
+        l.insertNewData("f")
         l.insertNewData("e")
         l.insertNewData("d")
         l.insertNewData("c")
         l.insertNewData("b")
         l.insertNewData("a")
 
-        l.printList()
+        l.recursivePrintList(l.getStartPTR)
+        Console.WriteLine("")
 
         l.reverseList()
 
-        l.printList()
+        l.recursivePrintList(l.getStartPTR)
+        Console.WriteLine("")
 
         'l.traceList()
 

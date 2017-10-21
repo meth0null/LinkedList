@@ -12,6 +12,10 @@
         Private startPTR As Integer
         Private freeListPTR As Integer
 
+        Function getStartPTR() As Integer
+            Return startPTR
+        End Function
+
         Dim list() As ListNode
 
         Sub initialize(ByVal size As Integer)
@@ -144,6 +148,15 @@
             Console.WriteLine("")
 
 
+        End Sub
+
+        Sub recursivePrintList(ByVal ptr As Integer)
+            If ptr = NullPTR Then
+                Return
+            End If
+
+            Console.Write(list(ptr).DATA & " ")
+            recursivePrintList(list(ptr).PTR)
         End Sub
 
         Sub traceList()
