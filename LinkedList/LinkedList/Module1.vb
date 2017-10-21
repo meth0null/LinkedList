@@ -12,26 +12,32 @@
         l.insertNewData("b")
         l.insertNewData("a")
 
-        l.traceList()
+        l.printList()
+
+        l.reverseList()
 
         l.printList()
 
-        l.deleteNode("b")
+        'l.traceList()
+
+        'l.printList()
+
+        'l.deleteNode("b")
 
 
-        l.printList()
+        'l.printList()
 
-        l.deleteNode("a")
+        'l.deleteNode("a")
 
-        l.printList()
+        'l.printList()
 
-        l.deleteNode("a")
+        'l.deleteNode("a")
 
-        l.deleteNode("e")
+        'l.deleteNode("e")
 
-        l.printList()
+        'l.printList()
 
-        l.traceList()
+        'l.traceList()
 
     End Sub
 

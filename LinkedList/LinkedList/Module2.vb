@@ -192,6 +192,28 @@
             End If
         End Function
 
+        Sub reverseList()
+
+            If startPTR = NullPTR Then
+                Return
+            End If
+
+            Dim current, prev, nxt As Integer
+
+            current = startPTR
+            prev = NullPTR
+
+            While current <> NullPTR
+                nxt = list(current).PTR
+                list(current).PTR = prev
+                prev = current
+                current = nxt
+            End While
+
+            startPTR = prev
+
+        End Sub
+
     End Structure
 
 End Module
